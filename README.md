@@ -43,5 +43,6 @@ Project ini dibuat untuk membuat proses penjualan dan pengelolaan produk menjadi
 tdc-ecommerce/
 ├── frontend/
 ├── backend/
+├── docs/
 ├── .gitignore
 └── README.md
