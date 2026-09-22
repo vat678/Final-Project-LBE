@@ -1,0 +1,142 @@
+basePath: /
+host: localhost:8080
+info:
+  contact: {}
+  description: REST API untuk Platform Manajemen & Penjualan E-Commerce UKM TDC.
+  title: TDC E-Commerce API
+  version: "1.0"
+paths:
+  /api/categories:
+    get:
+      description: Get all product categories
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "500":
+          description: Internal Server Error
+      summary: Get all categories
+      tags:
+      - Categories
+    post:
+      consumes:
+      - application/json
+      description: Create a new product category
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+        "400":
+          description: Bad Request
+        "500":
+          description: Internal Server Error
+      summary: Create category
+      tags:
+      - Categories
+  /api/orders:
+    get:
+      description: Get all customer orders
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "500":
+          description: Internal Server Error
+      summary: Get all orders
+      tags:
+      - Orders
+    post:
+      consumes:
+      - application/json
+      description: Create a new customer order
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+        "400":
+          description: Bad Request
+        "500":
+          description: Internal Server Error
+      summary: Create order
+      tags:
+      - Orders
+  /api/orders/{id}/status:
+    patch:
+      consumes:
+      - application/json
+      description: Update the status of an order
+      parameters:
+      - description: Order ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+        "404":
+          description: Not Found
+        "500":
+          description: Internal Server Error
+      summary: Update order status
+      tags:
+      - Orders
+  /api/products:
+    get:
+      description: Get all products
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "500":
+          description: Internal Server Error
+      summary: Get all products
+      tags:
+      - Products
+    post:
+      consumes:
+      - application/json
+      description: Create a new product
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+        "400":
+          description: Bad Request
+        "500":
+          description: Internal Server Error
+      summary: Create product
+      tags:
+      - Products
+  /api/products/{id}:
+    get:
+      description: Get product details by ID
+      parameters:
+      - description: Product ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "404":
+          description: Not Found
+        "500":
+          description: Internal Server Error
+      summary: Get product by ID
+      tags:
+      - Products
+swagger: "2.0"
